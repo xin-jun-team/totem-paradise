@@ -68,6 +68,14 @@
   <a href="#section-drops" class="boss-anchor-btn">📦 各等級掉落物</a>
 </div>
 
+<!-- ══ 左側 TOC ══ -->
+<div class="toc-panel">
+  <div class="toc-title">章節目錄</div>
+  <div class="toc-link" data-target="section-collection">🏆 BOSS 收藏</div>
+  <div class="toc-link" data-target="section-schedule">⏰ 登場時刻表</div>
+  <div class="toc-link" data-target="section-drops">📦 掉落等級表</div>
+</div>
+
 <div class="container" style="padding-top:40px;padding-bottom:80px">
 
   <!-- ══ SECTION 0: BOSS 收藏 ══ -->
@@ -79,145 +87,68 @@
     </div>
     <p style="color:var(--text-muted);font-size:.88em;margin-bottom:28px;text-align:center">💡 擊殺 BOSS 並收藏其道具，即可解鎖<strong style="color:var(--accent)">永久能力加成</strong>！</p>
 
-    <!-- 高級 -->
-    <div class="col-section">
-      <h3 class="col-section-title" style="color:#69f0ae">⚔️ 高級 BOSS 收藏 🟢</h3>
-      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-top:12px">
-        <table class="col-table">
-          <thead><tr><th style="color:#69f0ae">BOSS 名稱</th><th style="color:#69f0ae">收藏能力加成</th></tr></thead>
-          <tbody>
-            <tr><td>巨大鱷魚</td><td>HP +25</td></tr>
-            <tr><td>迪哥</td><td>HP +25</td></tr>
-            <tr><td>西瑪</td><td>回魔 +10</td></tr>
-            <tr><td>巴土瑟</td><td>魔法爆擊倍率 +0.1</td></tr>
-            <tr><td>卡士伯</td><td>魔法攻擊／命中 +1</td></tr>
-            <tr><td>馬庫爾</td><td>魔法爆擊倍率 +0.1</td></tr>
-            <tr><td>伊弗利特</td><td>近戰傷害 +1，HP +10</td></tr>
-            <tr><td>飛龍／豪勢</td><td>遠距攻擊 +1，HP +10</td></tr>
-            <tr><td>曼波兔／樹精</td><td>藥水恢復 +3%</td></tr>
-            <tr><td>賽尼斯</td><td>魔攻 +1，MP +5</td></tr>
-            <tr><td>反王肯恩</td><td>近戰傷害 +1，HP +10</td></tr>
-            <tr><td>鑽石高崙</td><td>傷害減免 +1</td></tr>
-            <tr><td>瑪依奴夏門</td><td>精神 +1</td></tr>
-            <tr><td>巴貝多</td><td>狩獵經驗 +5%</td></tr>
-            <tr><td>卡普</td><td>MP +10</td></tr>
-            <tr><td>巨大蜈蚣</td><td>PVP 傷害 +1</td></tr>
-            <tr><td>浮士德</td><td>防禦 -2</td></tr>
-            <tr><td>艾爾摩大將軍</td><td>近距命中 +1，MP +5</td></tr>
-            <tr><td>疾風的夏斯奇</td><td>遠距命中 +1，MP +5</td></tr>
-            <tr><td>狂風的夏斯奇</td><td>魔攻 +1，MP +5</td></tr>
-            <tr><td>須曼</td><td>抗魔 +2</td></tr>
-          </tbody>
-        </table>
+    <!-- 高級 Accordion -->
+    <div class="accordion">
+      <div class="accordion-hd open">
+        <span class="accordion-label"><span style="color:#69f0ae">⚔️ 高級 BOSS 收藏</span><span style="background:rgba(105,240,174,.15);color:#69f0ae;padding:2px 8px;border-radius:10px;font-size:.72rem;border:1px solid rgba(105,240,174,.3)">🟢 21 隻</span></span>
+        <span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-bd open">
+        <div style="overflow-x:auto"><table class="col-table"><thead><tr><th style="color:#69f0ae">BOSS 名稱</th><th style="color:#69f0ae">收藏能力加成</th></tr></thead><tbody>
+          <tr><td>巨大鱷魚</td><td>HP +25</td></tr><tr><td>迪哥</td><td>HP +25</td></tr><tr><td>西瑪</td><td>回魔 +10</td></tr><tr><td>巴土瑟</td><td>魔法爆擊倍率 +0.1</td></tr><tr><td>卡士伯</td><td>魔法攻擊／命中 +1</td></tr><tr><td>馬庫爾</td><td>魔法爆擊倍率 +0.1</td></tr><tr><td>伊弗利特</td><td>近戰傷害 +1，HP +10</td></tr><tr><td>飛龍／豪勢</td><td>遠距攻擊 +1，HP +10</td></tr><tr><td>曼波兔／樹精</td><td>藥水恢復 +3%</td></tr><tr><td>賽尼斯</td><td>魔攻 +1，MP +5</td></tr><tr><td>反王肯恩</td><td>近戰傷害 +1，HP +10</td></tr><tr><td>鑽石高崙</td><td>傷害減免 +1</td></tr><tr><td>瑪依奴夏門</td><td>精神 +1</td></tr><tr><td>巴貝多</td><td>狩獵經驗 +5%</td></tr><tr><td>卡普</td><td>MP +10</td></tr><tr><td>巨大蜈蚣</td><td>PVP 傷害 +1</td></tr><tr><td>浮士德</td><td>防禦 -2</td></tr><tr><td>艾爾摩大將軍</td><td>近距命中 +1，MP +5</td></tr><tr><td>疾風的夏斯奇</td><td>遠距命中 +1，MP +5</td></tr><tr><td>狂風的夏斯奇</td><td>魔攻 +1，MP +5</td></tr><tr><td>須曼</td><td>抗魔 +2</td></tr>
+        </tbody></table></div>
       </div>
     </div>
 
-    <!-- 稀有 -->
-    <div class="col-section">
-      <h3 class="col-section-title" style="color:#64b5f6">🌟 稀有 BOSS 收藏 🔵</h3>
-      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-top:12px">
-        <table class="col-table">
-          <thead><tr><th style="color:#64b5f6">BOSS 名稱</th><th style="color:#64b5f6">收藏能力加成</th></tr></thead>
-          <tbody>
-            <tr><td>魔法師</td><td>MP +10</td></tr>
-            <tr><td>黑長者</td><td>魔法爆擊 +1%</td></tr>
-            <tr><td>德雷克</td><td>PVP 傷害 +2</td></tr>
-            <tr><td>庫曼</td><td>防禦 -3</td></tr>
-            <tr><td>變形怪首領</td><td>魔攻 +2</td></tr>
-            <tr><td>巴風特</td><td>近戰傷害 +2，近戰命中 +2</td></tr>
-            <tr><td>巴列斯</td><td>昏迷命中 +3</td></tr>
-            <tr><td>巨大牛人</td><td>傷害減免 +1，HP +50</td></tr>
-            <tr><td>巨蟻女皇</td><td>遠距傷害 +2，遠距命中 +2</td></tr>
-            <tr><td>四大精靈王</td><td>對應能力（力／敏／智／精）+1</td></tr>
-            <tr><td>深淵之主</td><td>HP 恢復 +3，MP 恢復 +3</td></tr>
-            <tr><td>阿利歐克</td><td>法術減傷 +2</td></tr>
-            <tr><td>半魚人首領</td><td>PVP 減傷 +1</td></tr>
-            <tr><td>大王烏賊</td><td>藥水恢復量 +5%</td></tr>
-            <tr><td>塔洛斯／曼孟／瑪雅</td><td>魔武傷害 +2%</td></tr>
-            <tr><td>冰之女王</td><td>魔法命中 +2</td></tr>
-            <tr><td>冰魔</td><td>遠距命中 +4</td></tr>
-            <tr><td>大腳瑪幽</td><td>近距命中 +4</td></tr>
-          </tbody>
-        </table>
+    <!-- 稀有 Accordion -->
+    <div class="accordion">
+      <div class="accordion-hd">
+        <span class="accordion-label"><span style="color:#64b5f6">🌟 稀有 BOSS 收藏</span><span style="background:rgba(100,181,246,.15);color:#64b5f6;padding:2px 8px;border-radius:10px;font-size:.72rem;border:1px solid rgba(100,181,246,.3)">🔵 18 隻</span></span>
+        <span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-bd">
+        <div style="overflow-x:auto"><table class="col-table"><thead><tr><th style="color:#64b5f6">BOSS 名稱</th><th style="color:#64b5f6">收藏能力加成</th></tr></thead><tbody>
+          <tr><td>魔法師</td><td>MP +10</td></tr><tr><td>黑長者</td><td>魔法爆擊 +1%</td></tr><tr><td>德雷克</td><td>PVP 傷害 +2</td></tr><tr><td>庫曼</td><td>防禦 -3</td></tr><tr><td>變形怪首領</td><td>魔攻 +2</td></tr><tr><td>巴風特</td><td>近戰傷害 +2，近戰命中 +2</td></tr><tr><td>巴列斯</td><td>昏迷命中 +3</td></tr><tr><td>巨大牛人</td><td>傷害減免 +1，HP +50</td></tr><tr><td>巨蟻女皇</td><td>遠距傷害 +2，遠距命中 +2</td></tr><tr><td>四大精靈王</td><td>對應能力（力／敏／智／精）+1</td></tr><tr><td>深淵之主</td><td>HP 恢復 +3，MP 恢復 +3</td></tr><tr><td>阿利歐克</td><td>法術減傷 +2</td></tr><tr><td>半魚人首領</td><td>PVP 減傷 +1</td></tr><tr><td>大王烏賊</td><td>藥水恢復量 +5%</td></tr><tr><td>塔洛斯／曼孟／瑪雅</td><td>魔武傷害 +2%</td></tr><tr><td>冰之女王</td><td>魔法命中 +2</td></tr><tr><td>冰魔</td><td>遠距命中 +4</td></tr><tr><td>大腳瑪幽</td><td>近距命中 +4</td></tr>
+        </tbody></table></div>
       </div>
     </div>
 
-    <!-- 英雄 -->
-    <div class="col-section">
-      <h3 class="col-section-title" style="color:#ff5252">🔱 英雄 BOSS 收藏 🔴</h3>
-      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-top:12px">
-        <table class="col-table">
-          <thead><tr><th style="color:#ff5252">BOSS 名稱</th><th style="color:#ff5252">收藏能力加成</th></tr></thead>
-          <tbody>
-            <tr><td>潔尼斯女王</td><td>精神 +1，魔攻 +2</td></tr>
-            <tr><td>幻象眼魔</td><td>智力 +1，法術命中 +2</td></tr>
-            <tr><td>吸血鬼</td><td>抗魔 +5，HP +50</td></tr>
-            <tr><td>騎士范德</td><td>昏迷命中 +6</td></tr>
-            <tr><td>殭屍王</td><td>防禦 -1，傷害減免 +2</td></tr>
-            <tr><td>黑豹</td><td>近距攻擊 +3，遠距攻擊 +3</td></tr>
-            <tr><td>木乃伊王</td><td>魔攻 +2，MP +30</td></tr>
-            <tr><td>艾莉絲</td><td>近距命中 +3，遠距命中 +3</td></tr>
-            <tr><td>巫妖</td><td>魔法命中 +3</td></tr>
-            <tr><td>死亡騎士</td><td>力量 +1，HP 恢復 +3</td></tr>
-            <tr><td>不死鳥</td><td>敏捷 +1，MP 恢復 +3</td></tr>
-            <tr><td>惡魔</td><td>敏捷 +1，智力 +1</td></tr>
-            <tr><td>古代巨人／克特</td><td>魔防 +10</td></tr>
-          </tbody>
-        </table>
+    <!-- 英雄 Accordion -->
+    <div class="accordion">
+      <div class="accordion-hd">
+        <span class="accordion-label"><span style="color:#ff5252">🔱 英雄 BOSS 收藏</span><span style="background:rgba(255,82,82,.15);color:#ff5252;padding:2px 8px;border-radius:10px;font-size:.72rem;border:1px solid rgba(255,82,82,.3)">🔴 13 隻</span></span>
+        <span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-bd">
+        <div style="overflow-x:auto"><table class="col-table"><thead><tr><th style="color:#ff5252">BOSS 名稱</th><th style="color:#ff5252">收藏能力加成</th></tr></thead><tbody>
+          <tr><td>潔尼斯女王</td><td>精神 +1，魔攻 +2</td></tr><tr><td>幻象眼魔</td><td>智力 +1，法術命中 +2</td></tr><tr><td>吸血鬼</td><td>抗魔 +5，HP +50</td></tr><tr><td>騎士范德</td><td>昏迷命中 +6</td></tr><tr><td>殭屍王</td><td>防禦 -1，傷害減免 +2</td></tr><tr><td>黑豹</td><td>近距攻擊 +3，遠距攻擊 +3</td></tr><tr><td>木乃伊王</td><td>魔攻 +2，MP +30</td></tr><tr><td>艾莉絲</td><td>近距命中 +3，遠距命中 +3</td></tr><tr><td>巫妖</td><td>魔法命中 +3</td></tr><tr><td>死亡騎士</td><td>力量 +1，HP 恢復 +3</td></tr><tr><td>不死鳥</td><td>敏捷 +1，MP 恢復 +3</td></tr><tr><td>惡魔</td><td>敏捷 +1，智力 +1</td></tr><tr><td>古代巨人／克特</td><td>魔防 +10</td></tr>
+        </tbody></table></div>
       </div>
     </div>
 
-    <!-- 傳說 -->
-    <div class="col-section">
-      <h3 class="col-section-title" style="color:#ce93d8">🐲 傳說 BOSS 收藏 🟣</h3>
-      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-top:12px">
-        <table class="col-table">
-          <thead><tr><th style="color:#ce93d8">BOSS 名稱</th><th style="color:#ce93d8">收藏能力加成</th></tr></thead>
-          <tbody>
-            <tr><td>暗殺軍王．史雷佛</td><td>經驗 +3%，HP +50，無視閃避 +1</td></tr>
-            <tr><td>冥法軍王．海露拜</td><td>經驗 +3%，HP +50，無視迴避 +1</td></tr>
-            <tr><td>魔獸軍王．巴蘭卡</td><td>經驗 +3%，HP +50，昏迷抗性 +5</td></tr>
-            <tr><td>法令軍王．蕾雅</td><td>經驗 +3%，HP +50，魔法穿透 +1</td></tr>
-            <tr><td>長老．琪娜</td><td>經驗 +3%，MP +50，魔法爆擊 +1%</td></tr>
-            <tr><td>長老．巴塔斯</td><td>經驗 +3%，HP +50，近遠爆擊 +1%</td></tr>
-            <tr><td>長老．巴洛斯</td><td>經驗 +3%，HP +70，力量 +1</td></tr>
-            <tr><td>長老．安迪斯</td><td>經驗 +3%，HP +70，敏捷 +1</td></tr>
-            <tr><td>長老．艾迪爾</td><td>經驗 +3%，HP +70，智力 +1</td></tr>
-            <tr><td>長老．泰瑪斯</td><td>經驗 +3%，HP +50，魔法減免 +3</td></tr>
-            <tr><td>長老．拉曼斯</td><td>經驗 +3%，HP +50，傷害減免 +2</td></tr>
-            <tr><td>長老．巴陸德</td><td>經驗 +3%，MP +50，精神 +1</td></tr>
-          </tbody>
-        </table>
+    <!-- 傳說 Accordion -->
+    <div class="accordion">
+      <div class="accordion-hd">
+        <span class="accordion-label"><span style="color:#ce93d8">🐲 傳說 BOSS 收藏</span><span style="background:rgba(206,147,216,.15);color:#ce93d8;padding:2px 8px;border-radius:10px;font-size:.72rem;border:1px solid rgba(206,147,216,.3)">🟣 12 隻</span></span>
+        <span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-bd">
+        <div style="overflow-x:auto"><table class="col-table"><thead><tr><th style="color:#ce93d8">BOSS 名稱</th><th style="color:#ce93d8">收藏能力加成</th></tr></thead><tbody>
+          <tr><td>暗殺軍王．史雷佛</td><td>經驗 +3%，HP +50，無視閃避 +1</td></tr><tr><td>冥法軍王．海露拜</td><td>經驗 +3%，HP +50，無視迴避 +1</td></tr><tr><td>魔獸軍王．巴蘭卡</td><td>經驗 +3%，HP +50，昏迷抗性 +5</td></tr><tr><td>法令軍王．蕾雅</td><td>經驗 +3%，HP +50，魔法穿透 +1</td></tr><tr><td>長老．琪娜</td><td>經驗 +3%，MP +50，魔法爆擊 +1%</td></tr><tr><td>長老．巴塔斯</td><td>經驗 +3%，HP +50，近遠爆擊 +1%</td></tr><tr><td>長老．巴洛斯</td><td>經驗 +3%，HP +70，力量 +1</td></tr><tr><td>長老．安迪斯</td><td>經驗 +3%，HP +70，敏捷 +1</td></tr><tr><td>長老．艾迪爾</td><td>經驗 +3%，HP +70，智力 +1</td></tr><tr><td>長老．泰瑪斯</td><td>經驗 +3%，HP +50，魔法減免 +3</td></tr><tr><td>長老．拉曼斯</td><td>經驗 +3%，HP +50，傷害減免 +2</td></tr><tr><td>長老．巴陸德</td><td>經驗 +3%，MP +50，精神 +1</td></tr>
+        </tbody></table></div>
       </div>
     </div>
 
-    <!-- 神話 -->
-    <div class="col-section">
-      <h3 class="col-section-title" style="color:var(--gold)">👑 神話 BOSS 收藏 🟡</h3>
-      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-top:12px">
-        <table class="col-table">
-          <thead><tr><th style="color:var(--gold)">BOSS 名稱</th><th style="color:var(--gold)">收藏能力加成</th></tr></thead>
-          <tbody>
-            <tr><td>鐮刀死神</td><td>經驗 +6%，魔武發動 +1%，魔減 +8</td></tr>
-            <tr><td>林德拜爾</td><td>魔武發動 +1%，魔攻 +5，風抗 +10</td></tr>
-            <tr><td>安塔瑞斯</td><td>魔武發動 +1%，魔減 +4，敏 +2，地抗 +10</td></tr>
-            <tr><td>法利昂</td><td>魔武發動 +1%，傷減 +3，智 +2，水抗 +10</td></tr>
-            <tr><td>巴拉卡斯</td><td>魔武發動 +1%，法傷 +20，力 +2，火抗 +10</td></tr>
-            <tr><td>吉爾塔斯</td><td>經驗 +6%，魔武發動 +1%，PVP減傷 +2，抗魔 +10</td></tr>
-            <tr><td>獨角獸</td><td>魔武發動 +1%，魔武傷 +2%，魔爆 +1%</td></tr>
-            <tr><td>沙蟲</td><td>經驗 +12%，PvP 增傷 +3，抗魔 +10</td></tr>
-            <tr><td>白面金毛殺生石</td><td>經驗 +6%，魔武爆擊 +1%，遠攻 +5</td></tr>
-            <tr><td>混沌</td><td>近攻 +4，遠攻 +4，魔攻 +3</td></tr>
-            <tr><td>死亡</td><td>經驗 +6%，魔武爆擊 +1%，近攻 +5</td></tr>
-            <tr><td>墮落</td><td>經驗 +6%，魔武發動 +1%，魔命 +3</td></tr>
-            <tr><td>炎魔</td><td>經驗 +6%，魔法爆擊 +1%，近命 +6</td></tr>
-            <tr><td>火焰之影</td><td>經驗 +6%，魔法爆擊 +1%，遠命 +6</td></tr>
-            <tr><td>底比斯 賀洛斯／玉藻前</td><td>智力 +3，魔武傷害 +5%</td></tr>
-            <tr><td>底比斯 阿努比斯／巨型骷髏</td><td>力量 +3，魔武傷害 +5%</td></tr>
-            <tr><td>白面金毛九尾狐／杰弗雷庫（雄）</td><td>敏捷 +3，魔武傷害 +5%</td></tr>
-            <tr><td>杰弗雷庫（雌）</td><td>精神 +3，魔武傷害 +5%</td></tr>
-          </tbody>
-        </table>
+    <!-- 神話 Accordion -->
+    <div class="accordion">
+      <div class="accordion-hd">
+        <span class="accordion-label"><span style="color:#ffe600">👑 神話 BOSS 收藏</span><span style="background:rgba(255,230,0,.1);color:#ffe600;padding:2px 8px;border-radius:10px;font-size:.72rem;border:1px solid rgba(255,230,0,.3)">🟡 18 隻</span></span>
+        <span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-bd">
+        <div style="overflow-x:auto"><table class="col-table"><thead><tr><th style="color:#ffe600">BOSS 名稱</th><th style="color:#ffe600">收藏能力加成</th></tr></thead><tbody>
+          <tr><td>鐮刀死神</td><td>經驗 +6%，魔武發動 +1%，魔減 +8</td></tr><tr><td>林德拜爾</td><td>魔武發動 +1%，魔攻 +5，風抗 +10</td></tr><tr><td>安塔瑞斯</td><td>魔武發動 +1%，魔減 +4，敏 +2，地抗 +10</td></tr><tr><td>法利昂</td><td>魔武發動 +1%，傷減 +3，智 +2，水抗 +10</td></tr><tr><td>巴拉卡斯</td><td>魔武發動 +1%，法傷 +20，力 +2，火抗 +10</td></tr><tr><td>吉爾塔斯</td><td>經驗 +6%，魔武發動 +1%，PVP減傷 +2，抗魔 +10</td></tr><tr><td>獨角獸</td><td>魔武發動 +1%，魔武傷 +2%，魔爆 +1%</td></tr><tr><td>沙蟲</td><td>經驗 +12%，PvP 增傷 +3，抗魔 +10</td></tr><tr><td>白面金毛殺生石</td><td>經驗 +6%，魔武爆擊 +1%，遠攻 +5</td></tr><tr><td>混沌</td><td>近攻 +4，遠攻 +4，魔攻 +3</td></tr><tr><td>死亡</td><td>經驗 +6%，魔武爆擊 +1%，近攻 +5</td></tr><tr><td>墮落</td><td>經驗 +6%，魔武發動 +1%，魔命 +3</td></tr><tr><td>炎魔</td><td>經驗 +6%，魔法爆擊 +1%，近命 +6</td></tr><tr><td>火焰之影</td><td>經驗 +6%，魔法爆擊 +1%，遠命 +6</td></tr><tr><td>底比斯 賀洛斯／玉藻前</td><td>智力 +3，魔武傷害 +5%</td></tr><tr><td>底比斯 阿努比斯／巨型骷髏</td><td>力量 +3，魔武傷害 +5%</td></tr><tr><td>白面金毛九尾狐／杰弗雷庫（雄）</td><td>敏捷 +3，魔武傷害 +5%</td></tr><tr><td>杰弗雷庫（雌）</td><td>精神 +3，魔武傷害 +5%</td></tr>
+        </tbody></table></div>
       </div>
     </div>
   </div>
