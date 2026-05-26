@@ -971,17 +971,17 @@ footer {
   padding:9px 16px;
   font-size:0.78rem; letter-spacing:1px;
   color:var(--text-muted);
-  background:transparent;
+  background:rgba(6,9,16,0.75);
   border:none; border-bottom:2px solid transparent;
   margin-bottom:-2px;
   cursor:pointer; font-family:inherit;
   transition:all 0.2s; white-space:nowrap;
 }
-.tab-btn:hover { color:var(--text); background:rgba(201,160,64,0.04); }
+.tab-btn:hover { color:var(--text); background:rgba(6,9,16,0.9); }
 .tab-btn.active {
   color:var(--pink);
   border-bottom-color:var(--pink);
-  background:rgba(201,160,64,0.06);
+  background:rgba(6,9,16,0.9);
 }
 .tab-panel { display:none; }
 .tab-panel.active { display:block; }
