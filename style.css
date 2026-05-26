@@ -25,8 +25,6 @@
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; font-size:16px; }
-/* ── 標題通用陰影：防止被背景圖吃色 ── */
-h1,h2,h3,h4 { text-shadow:0 1px 6px rgba(0,0,0,0.85); }
 body {
   background: var(--bg);
   background-image:
@@ -356,12 +354,19 @@ img { max-width:100%; display:block; }
   max-width:1200px; margin:0 auto; padding:0 24px;
 }
 
-.section-header { text-align:center; margin-bottom:44px; }
+.section-header {
+  text-align:center; margin-bottom:44px;
+  background:rgba(6,9,16,0.72);
+  border:1px solid rgba(201,160,64,0.2);
+  border-radius:10px;
+  padding:22px 28px;
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+}
 
 .section-eyebrow {
   font-size:0.7rem; letter-spacing:5px;
   color:var(--text-muted); margin-bottom:10px;
-  text-shadow:0 1px 6px rgba(0,0,0,1),0 0 12px rgba(0,0,0,0.9);
 }
 
 .section-title {
@@ -373,7 +378,7 @@ img { max-width:100%; display:block; }
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: none;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.95));
+  filter: none;
 }
 
 .section-line {
