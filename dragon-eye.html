@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-Hant">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>陀螺天堂 - 四龍之魔眼</title>  <link rel="preconnect" href="https://telegraph-image-1n0.pages.dev" crossorigin>
   <link rel="dns-prefetch" href="https://telegraph-image-1n0.pages.dev">
@@ -7,55 +7,53 @@
     body { background-image:url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDl2oKsIrQ--LWATlPU2Lr4azsyw-mAAKhD2sbx8dQVB2-s2pJCrnTAQADAgADeQADOwQ.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
     .section     { background:rgba(7,6,15,0.82)  !important; }
     .section-alt { background:rgba(15,12,12,0.88) !important; }
-    :root{--fire:#c62828;--fire-bg:#fce8e6;--wind:#2e7d32;--wind-bg:#e8f5e9;--water:#1565c0;--water-bg:#e3f2fd;--earth:#5d4037;--earth-bg:#efebe9;--border2:#dadce0;--dim:#5f6368;}
-    .page-header{background:linear-gradient(135deg,#1a237e,#283593,#1565c0);color:#fff;text-align:center;padding:32px 20px 24px;box-shadow:0 2px 8px rgba(0,0,0,.2);}
-    .page-header h1{font-size:clamp(20px,4vw,30px);font-weight:900;letter-spacing:2px;margin-bottom:6px;}
-    .page-header p{font-size:13px;opacity:.7;letter-spacing:3px;}
-    .eye-nav-bar{position:sticky;top:58px;z-index:99;background:#fff;border-bottom:2px solid var(--border2);box-shadow:0 2px 6px rgba(0,0,0,.08);padding:0 16px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;}
+    :root{--fire:#ef5350;--fire-bg:rgba(239,83,80,.18);--wind:#66bb6a;--wind-bg:rgba(76,175,80,.15);--water:#64b5f6;--water-bg:rgba(100,181,246,.15);--earth:#a1887f;--earth-bg:rgba(161,136,127,.15);}
+    .eye-nav-bar{position:sticky;top:58px;z-index:99;background:var(--bg3);border-bottom:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.5);padding:0 16px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;}
     .eye-nav-bar::-webkit-scrollbar{display:none;}
-    .eye-nav-btn{flex-shrink:0;padding:12px 16px;border:none;background:none;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;color:var(--dim);border-bottom:3px solid transparent;transition:all .2s;}
-    .eye-nav-btn:hover{color:#1a73e8;background:rgba(26,115,232,.05);}
-    .eye-nav-btn.active{color:#1a73e8;border-bottom-color:#1a73e8;}
-    .eye-section-block{padding-top:32px;}
+    .eye-nav-btn{flex-shrink:0;padding:12px 16px;border:none;background:none;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;color:var(--text-muted);border-bottom:3px solid transparent;transition:all .2s;}
+    .eye-nav-btn:hover{color:var(--gold);background:rgba(240,192,64,.06);}
+    .eye-nav-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+    .eye-section-block{padding-top:28px;}
     .eye-section-title{display:flex;align-items:center;gap:10px;padding:13px 20px;border-radius:10px 10px 0 0;font-size:16px;font-weight:900;letter-spacing:2px;color:#fff;}
-    .eye-section-body{background:#fff;border:1px solid var(--border2);border-top:none;border-radius:0 0 10px 10px;padding:20px;margin-bottom:28px;box-shadow:0 2px 8px rgba(0,0,0,.06);}
-    .title-blue{background:linear-gradient(135deg,#1565c0,#1a73e8);}
-    .title-gold{background:linear-gradient(135deg,#7a5c00,#b8860b);}
-    .craft-hint{background:#f8f9fa;border:1px solid var(--border2);border-radius:8px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:14px;font-size:14px;color:var(--dim);}
-    .craft-hint strong{color:#444;}
+    .eye-section-body{background:var(--bg2);border:1px solid var(--border);border-top:none;border-radius:0 0 10px 10px;padding:20px;margin-bottom:28px;}
+    .title-blue{background:linear-gradient(135deg,#06001a,#0a1050);}
+    .title-gold{background:linear-gradient(135deg,#3a2800,#5a4000);}
+    .craft-hint{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:14px;font-size:14px;color:var(--text-muted);}
+    .craft-hint strong{color:var(--text);}
     .eye-table2{width:100%;border-collapse:collapse;font-size:14px;}
-    .eye-table2 thead tr{background:#f1f3f4;}
-    .eye-table2 th{padding:12px;border-bottom:2px solid var(--border2);text-align:left;color:#444;font-weight:700;}
-    .eye-table2 td{padding:14px 12px;border-bottom:1px solid #eee;vertical-align:middle;}
+    .eye-table2 thead tr{background:var(--bg3);}
+    .eye-table2 th{padding:12px;border-bottom:2px solid var(--border);text-align:left;color:var(--text-muted);font-weight:700;}
+    .eye-table2 td{padding:14px 12px;border-bottom:1px solid var(--border);vertical-align:middle;color:var(--text);}
+    .eye-table2 tr:nth-child(even) td{background:rgba(255,255,255,.03);}
     .eye-table2 tr:last-child td{border-bottom:none;}
     .ability-badge{display:inline-block;padding:3px 9px;border-radius:4px;font-weight:700;font-size:13px;margin-bottom:5px;}
-    .eye-sub-stat{color:#555;font-size:12px;margin-top:3px;}
+    .eye-sub-stat{color:var(--text-muted);font-size:12px;margin-top:3px;}
     .combined-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-bottom:24px;}
-    .eye-card{border-radius:10px;overflow:hidden;border:1px solid var(--border2);box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s;}
-    .eye-card:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.1);}
+    .eye-card{border-radius:10px;overflow:hidden;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.4);transition:transform .2s,box-shadow .2s;}
+    .eye-card:hover{transform:translateY(-3px);box-shadow:0 6px 22px rgba(0,0,0,.6);}
     .eye-card-head{padding:13px 16px;font-size:15px;font-weight:900;letter-spacing:1px;color:#fff;display:flex;align-items:center;gap:8px;}
-    .eye-card-head.birth{background:linear-gradient(135deg,#4a148c,#7b1fa2);}
-    .eye-card-head.image{background:linear-gradient(135deg,#004d40,#00796b);}
-    .eye-card-head.life{background:linear-gradient(135deg,#7a5c00,#b8860b);}
-    .eye-card-body{padding:14px 16px;background:#fff;}
-    .stat-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #f0f0f0;font-size:13px;}
+    .eye-card-head.birth{background:linear-gradient(135deg,#18003a,#2d0055);}
+    .eye-card-head.image{background:linear-gradient(135deg,#001a14,#003025);}
+    .eye-card-head.life{background:linear-gradient(135deg,#2a1800,#4a2c00);}
+    .eye-card-body{padding:14px 16px;background:var(--bg2);}
+    .stat-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px;}
     .stat-row:last-child{border-bottom:none;}
-    .stat-name{color:var(--dim);}
-    .stat-val.pos{color:#1565c0;font-weight:700;}
-    .stat-val.neg{color:#c62828;font-weight:700;}
-    .mat-section{margin-top:14px;padding-top:12px;border-top:1px solid #eee;}
-    .mat-title{font-size:11px;font-weight:700;letter-spacing:2px;color:#999;margin-bottom:10px;}
+    .stat-name{color:var(--text-muted);}
+    .stat-val.pos{color:#64b5f6;font-weight:700;}
+    .stat-val.neg{color:#ef5350;font-weight:700;}
+    .mat-section{margin-top:14px;padding-top:12px;border-top:1px solid var(--border);}
+    .mat-title{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--text-muted);margin-bottom:10px;}
     .mat-list{display:flex;flex-direction:column;gap:5px;}
-    .mat-item{display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:4px 8px;background:#fafafa;border-radius:4px;border:1px solid #f0f0f0;}
-    .mat-name{color:#444;}
-    .mat-qty{font-weight:700;color:#1a73e8;}
-    .mat-item.fire{border-left:3px solid var(--fire);background:var(--fire-bg);}
-    .mat-item.wind{border-left:3px solid var(--wind);background:var(--wind-bg);}
-    .mat-item.water{border-left:3px solid var(--water);background:var(--water-bg);}
-    .mat-item.earth{border-left:3px solid var(--earth);background:var(--earth-bg);}
-    .mat-item.craft{border-left:3px solid #7b1fa2;background:#f3e5f5;}
-    .mat-item.gem{border-left:3px solid #1565c0;background:#e3f2fd;}
-    .mat-item.gold{border-left:3px solid #b8860b;background:#fff8e1;}
+    .mat-item{display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 8px;background:var(--bg3);border-radius:4px;border:1px solid var(--border);}
+    .mat-name{color:var(--text);}
+    .mat-qty{font-weight:700;color:var(--accent);}
+    .mat-item.fire{border-left:3px solid var(--fire);}
+    .mat-item.wind{border-left:3px solid var(--wind);}
+    .mat-item.water{border-left:3px solid var(--water);}
+    .mat-item.earth{border-left:3px solid var(--earth);}
+    .mat-item.craft{border-left:3px solid #ab47bc;}
+    .mat-item.gem{border-left:3px solid var(--accent);}
+    .mat-item.gold{border-left:3px solid var(--gold);}
     .req-eyes{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 14px;}
     .req-eye-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;}
     .req-eye-tag.fire{background:var(--fire-bg);color:var(--fire);}
@@ -72,9 +70,13 @@
 <div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 預約LINE禮包</div><div class="modal-body"><p>▸ 煉獄耳環<br>▸ 名譽貨幣【刻印】× 100<br>▸ 巧克力蛋糕【刻印】× 100<br>▸ 永久巧克力（永久三水）<br>▸ 永久名譽貨幣（永久三水）<br>▸ 象牙塔治癒藥水 × 10000<br><br><strong>加入 LINE 官方社群後私訊管理員即可領取。</strong></p></div><a class="modal-btn" href="event-line.html">查看禮包詳情</a></div></div>
 <div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><img loading="lazy" src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDt2oQEbC0Vsj-4hnZDUxbXsUQcuj0AAJ4D2sb09WBVJcdFTW15cEjAQADAgADbQADOwQ.png" alt="LINE QR Code" style="width:150px;height:150px;margin:0 auto 12px;display:block;border-radius:8px;"></div><a class="modal-btn" href="https://line.me/ti/g2/efPZsZj8mqabZSOVQgvk0SXqPZMlvBfa-ut1Mw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">加入 LINE 官方社群</a></div></div>
 
-<div class="page-header">
-  <h1>🔮 魔眼介紹</h1>
-  <p>MAGIC EYE GUIDE ‧ 點擊按鈕快速跳轉</p>
+<div class="hero" style="height:240px">
+  <div class="hero-bg" style="background:linear-gradient(135deg,#08001a,#00080a);"></div>
+  <div class="hero-content">
+    <div class="hero-badge">DRAGON EYE</div>
+    <h1 class="hero-title"><span style="font-size:2rem">🔮 魔眼介紹</span></h1>
+    <p class="hero-tagline">四龍之魔眼 · 合成魔眼 完整系統指南</p>
+  </div>
 </div>
 
 <nav class="eye-nav-bar" id="navBar">
