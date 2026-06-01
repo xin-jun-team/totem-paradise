@@ -7,6 +7,12 @@
     body { background-image:url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDl2oKsIrQ--LWATlPU2Lr4azsyw-mAAKhD2sbx8dQVB2-s2pJCrnTAQADAgADeQADOwQ.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
     .section     { background:rgba(7,6,15,0.82)  !important; }
     .section-alt { background:rgba(15,12,12,0.88) !important; }
+    html{scroll-padding-top:120px;}
+    .toc-bar{position:sticky;top:60px;z-index:50;background:rgba(10,8,16,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 4px;display:flex;gap:0;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none;margin-bottom:28px;border-radius:8px;}
+    .toc-bar::-webkit-scrollbar{display:none;}
+    .toc-btn{flex-shrink:0;padding:11px 16px;font-size:12px;letter-spacing:1px;background:none;border:none;border-bottom:2px solid transparent;color:var(--text-muted);cursor:pointer;transition:all .2s;white-space:nowrap;}
+    .toc-btn:hover{color:var(--text);border-bottom-color:rgba(201,169,110,.4);}
+    .toc-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
   </style></head>
 <body>
 <nav class="topnav"><a class="topnav-logo" href="index.html">🌀 陀螺天堂</a><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="sponsor.html">贊助系統</a><a class="topnav-link" href="events-list.html">活動介紹</a><a class="topnav-link" href="features.html">遊戲特色</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖特殊掉落</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><a class="topnav-link" href="promote.html">推文與直播</a><div class="topnav-dropdown"><a class="topnav-link">遊戲規章 ▾</a><div class="dropdown-menu"><a href="rules.html">伺服器規章</a><a href="disclaimer.html">免責聲明</a><a href="anti-cheat.html">防作弊聲明</a></div></div><div class="topnav-dropdown"><a class="topnav-link">聯絡我們 ▾</a><div class="dropdown-menu"><a href="https://line.me/ti/g2/efPZsZj8mqabZSOVQgvk0SXqPZMlvBfa-ut1Mw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">LINE 官方社群</a><a href="https://lin.ee/5u5GsiK" target="_blank">LINE 官方</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="https://line.me/ti/g2/efPZsZj8mqabZSOVQgvk0SXqPZMlvBfa-ut1Mw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
@@ -27,8 +33,16 @@
 <div class="container" style="padding-top:56px;padding-bottom:80px">
   <div class="feature-detail-content" style="margin-top:32px">
 
+    <!-- 章節目錄 -->
+    <div class="toc-bar">
+      <button class="toc-btn active" onclick="tocJump('relic-info')">🛠️ 強化說明</button>
+      <button class="toc-btn" onclick="tocJump('relic-melee')">⚔️ 近戰系列</button>
+      <button class="toc-btn" onclick="tocJump('relic-range')">🏹 遠程系列</button>
+      <button class="toc-btn" onclick="tocJump('relic-mage')">🪄 法師系列</button>
+    </div>
+
     <!-- 強化說明 -->
-    <div style="background:var(--bg2);border:1px solid rgba(249,168,37,.2);border-radius:10px;padding:20px;margin-bottom:30px">
+    <div id="relic-info" style="background:var(--bg2);border:1px solid rgba(249,168,37,.2);border-radius:10px;padding:20px;margin-bottom:30px">
       <h3 style="margin-top:0;color:var(--gold);font-size:1.05em;border-left:3px solid var(--gold);padding-left:10px">🛠️ 聖物強化說明</h3>
       <ul style="margin:10px 0 0 0;padding-left:20px;color:var(--text-muted)">
         <li style="margin-bottom:8px">
@@ -48,7 +62,7 @@
     </div>
 
     <!-- 聖物系列一 近戰 -->
-    <h3 style="color:#ff6b6b;margin-bottom:12px;display:flex;align-items:center;gap:10px">
+    <h3 id="relic-melee" style="color:#ff6b6b;margin-bottom:12px;display:flex;align-items:center;gap:10px">
       <span style="background:rgba(255,107,107,.15);padding:5px 10px;border-radius:50%">⚔️</span> 聖物系列一（近戰）
     </h3>
     <div style="overflow-x:auto;border:1px solid rgba(255,107,107,.25);border-radius:8px;margin-bottom:30px">
@@ -109,7 +123,7 @@
     </div>
 
     <!-- 聖物系列二 遠程 -->
-    <h3 style="color:#69f0ae;margin-bottom:12px;display:flex;align-items:center;gap:10px">
+    <h3 id="relic-range" style="color:#69f0ae;margin-bottom:12px;display:flex;align-items:center;gap:10px">
       <span style="background:rgba(105,240,174,.12);padding:5px 10px;border-radius:50%">🏹</span> 聖物系列二（遠程）
     </h3>
     <div style="overflow-x:auto;border:1px solid rgba(105,240,174,.2);border-radius:8px;margin-bottom:30px">
@@ -170,7 +184,7 @@
     </div>
 
     <!-- 聖物系列三 法師 -->
-    <h3 style="color:#82b1ff;margin-bottom:12px;display:flex;align-items:center;gap:10px">
+    <h3 id="relic-mage" style="color:#82b1ff;margin-bottom:12px;display:flex;align-items:center;gap:10px">
       <span style="background:rgba(130,177,255,.12);padding:5px 10px;border-radius:50%">🪄</span> 聖物系列三（法師）
     </h3>
     <div style="overflow-x:auto;border:1px solid rgba(130,177,255,.2);border-radius:8px;margin-bottom:10px">
@@ -268,5 +282,9 @@
   </div>
 </footer>
 <script src="main.js"></script>
+<script>
+function tocJump(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+(function(){const secs=['relic-info','relic-melee','relic-range','relic-mage'];const btns=document.querySelectorAll('.toc-btn');window.addEventListener('scroll',()=>{let cur=secs[0];secs.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)cur=id;});btns.forEach((b,i)=>b.classList.toggle('active',secs[i]===cur));},{passive:true});})();
+</script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body></html>

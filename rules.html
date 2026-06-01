@@ -10,6 +10,12 @@
     body { background-image:url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDl2oKsIrQ--LWATlPU2Lr4azsyw-mAAKhD2sbx8dQVB2-s2pJCrnTAQADAgADeQADOwQ.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
     .section     { background:rgba(7,6,15,0.82)  !important; }
     .section-alt { background:rgba(15,12,12,0.88) !important; }
+    html{scroll-padding-top:120px;}
+    .toc-bar{position:sticky;top:60px;z-index:50;background:rgba(10,8,16,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 4px;display:flex;gap:0;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none;margin-bottom:28px;border-radius:8px;}
+    .toc-bar::-webkit-scrollbar{display:none;}
+    .toc-btn{flex-shrink:0;padding:11px 16px;font-size:12px;letter-spacing:1px;background:none;border:none;border-bottom:2px solid transparent;color:var(--text-muted);cursor:pointer;transition:all .2s;white-space:nowrap;}
+    .toc-btn:hover{color:var(--text);border-bottom-color:rgba(201,169,110,.4);}
+    .toc-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
   </style>
 </head>
 <body>
@@ -22,8 +28,17 @@
 <div class="container" style="padding-top:56px;padding-bottom:80px">
   <div class="feature-detail-content" style="max-width:800px;margin:0 auto">
 
+    <!-- 章節目錄 -->
+    <div class="toc-bar">
+      <button class="toc-btn active" onclick="tocJump('rule-ch1')">⛔ 第一章</button>
+      <button class="toc-btn" onclick="tocJump('rule-ch2')">🚫 第二章</button>
+      <button class="toc-btn" onclick="tocJump('rule-jail')">🔒 小黑屋</button>
+      <button class="toc-btn" onclick="tocJump('rule-redeem')">🔄 贖回裝備</button>
+      <button class="toc-btn" onclick="tocJump('rule-burst')">💥 衝爆贖回</button>
+    </div>
+
     <!-- 第一章 -->
-    <div style="background:var(--bg2);border:1px solid rgba(255,68,68,.25);border-radius:10px;padding:24px 28px;margin-bottom:20px">
+    <div id="rule-ch1" style="background:var(--bg2);border:1px solid rgba(255,68,68,.25);border-radius:10px;padding:24px 28px;margin-bottom:20px">
       <h3 style="margin-top:0;color:#ff6b6b;border-left:3px solid #ff6b6b;padding-left:10px">⛔ 第一章：管理團隊與言論規範</h3>
       <div style="display:flex;flex-direction:column;gap:14px">
         <div style="background:var(--bg3);border-left:3px solid #ff6b6b;border-radius:0 8px 8px 0;padding:12px 16px">
@@ -46,7 +61,7 @@
     </div>
 
     <!-- 第二章 -->
-    <div style="background:var(--bg2);border:1px solid rgba(255,107,107,.25);border-radius:10px;padding:24px 28px;margin-bottom:20px">
+    <div id="rule-ch2" style="background:var(--bg2);border:1px solid rgba(255,107,107,.25);border-radius:10px;padding:24px 28px;margin-bottom:20px">
       <h3 style="margin-top:0;color:#ff6b6b;border-left:3px solid #ff6b6b;padding-left:10px">🚫 第二章：破壞遊戲公平性</h3>
       <div style="display:flex;flex-direction:column;gap:14px">
         <div style="background:var(--bg3);border-left:3px solid #ff6b6b;border-radius:0 8px 8px 0;padding:12px 16px">
@@ -69,7 +84,7 @@
     </div>
 
     <!-- 小黑屋處罰 -->
-    <div style="background:rgba(80,0,0,.2);border:2px solid #ff4d4d;border-radius:12px;padding:28px;margin-bottom:20px">
+    <div id="rule-jail" style="background:rgba(80,0,0,.2);border:2px solid #ff4d4d;border-radius:12px;padding:28px;margin-bottom:20px">
       <p style="font-size:1.05em;color:#ff9999;font-weight:700;margin:0 0 16px 0;border-bottom:1px solid rgba(255,77,77,.4);padding-bottom:12px">針對玩家惡意鑽漏洞、使用「定時功能」掛機等行為，官方將採取最高規格裁決。</p>
       <p style="color:var(--text);margin-bottom:16px">凡經官方查證屬實，將直接關閉於 <span style="color:#ff4d4d;font-weight:700;border-bottom:1px solid #ff4d4d">「小黑屋」</span> 懲處，規則如下：</p>
       <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
@@ -89,7 +104,7 @@
     </div>
 
     <!-- 贖回裝備及收費服務 -->
-    <div style="background:var(--bg2);border:1px solid rgba(255,45,120,.25);border-radius:10px;padding:24px 28px;margin-bottom:20px">
+    <div id="rule-redeem" style="background:var(--bg2);border:1px solid rgba(255,45,120,.25);border-radius:10px;padding:24px 28px;margin-bottom:20px">
       <h3 style="margin-top:0;color:var(--gold);border-left:3px solid var(--gold);padding-left:10px">🔄 贖回裝備及收費服務</h3>
       <div style="background:var(--bg3);border:1px solid rgba(255,153,68,.2);border-radius:8px;padding:14px 16px;margin-bottom:16px;font-size:.88em;color:var(--text-muted);line-height:1.7">
         <strong style="color:#ffcc00">⚠️ 找回機制說明：</strong>找回僅限「玩家誤刪除」之狀況，<strong style="color:var(--text)">不包含</strong>衝裝點爆、正常交易錯誤等非誤操作行為。請玩家妥善保管自身帳號與物品。
@@ -126,7 +141,7 @@
     </div>
 
     <!-- 裝備衝爆贖回規章 -->
-    <div style="background:var(--bg2);border:1px solid rgba(255,45,120,.25);border-radius:10px;padding:24px 28px;margin-bottom:20px">
+    <div id="rule-burst" style="background:var(--bg2);border:1px solid rgba(255,45,120,.25);border-radius:10px;padding:24px 28px;margin-bottom:20px">
       <h3 style="margin-top:0;color:var(--gold);border-left:3px solid var(--gold);padding-left:10px">💥 裝備衝爆贖回規章</h3>
       <p style="color:var(--text-muted);line-height:1.8;margin:0 0 16px 0">為維護遊戲裝備平衡，針對強化失敗損毀之裝備，提供贖回機制。贖回費用將隨次數遞增，請各位玩家審慎評估。</p>
       <div style="overflow-x:auto">
@@ -204,6 +219,8 @@
 </footer>
 <script src="main.js"></script>
 <script>
+function tocJump(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+(function(){const secs=['rule-ch1','rule-ch2','rule-jail','rule-redeem','rule-burst'];const btns=document.querySelectorAll('.toc-btn');window.addEventListener('scroll',()=>{let cur=secs[0];secs.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)cur=id;});btns.forEach((b,i)=>b.classList.toggle('active',secs[i]===cur));},{passive:true});})();
 function calcRedeem(){
   var n=parseInt(document.getElementById('redeem-times').value)||1;
   if(n<1)n=1;
