@@ -7,10 +7,76 @@
     body { background-image:url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDl2oKsIrQ--LWATlPU2Lr4azsyw-mAAKhD2sbx8dQVB2-s2pJCrnTAQADAgADeQADOwQ.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
     .section     { background:rgba(7,6,15,0.82)  !important; }
     .section-alt { background:rgba(15,12,12,0.88) !important; }
-    /* 標題底色 */
-    .map-content h2 { background:#0d0b0b; padding:10px 14px; border-radius:6px; margin-bottom:16px; }
-    .map-content h3 { background:#0d0b0b; padding:8px 12px; border-radius:5px; margin-bottom:12px; }
-    .map-content h4 { background:rgba(7,6,15,0.85); padding:6px 10px; border-radius:4px; }
+    /* ===== 地圖頁新CSS ===== */
+    .nav-bar{position:sticky;top:58px;z-index:99;background:var(--bg3);border-bottom:1px solid var(--border);padding:0 16px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;}
+    .nav-bar::-webkit-scrollbar{display:none;}
+    .nav-btn{flex-shrink:0;padding:10px 14px;border:none;background:none;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;color:var(--text-muted);border-bottom:3px solid transparent;transition:all .2s;letter-spacing:1px;}
+    .nav-btn:hover{color:var(--gold);background:rgba(240,192,64,.06);}
+    .nav-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+    .section-block{padding-top:32px;}
+    .section-title{display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:8px 8px 0 0;font-size:16px;font-weight:900;letter-spacing:2px;color:#fff;}
+    .section-title.blue  {background:linear-gradient(135deg,#1565c0,#1a73e8);}
+    .section-title.purple{background:linear-gradient(135deg,#6a1b9a,#8e24aa);}
+    .section-title.teal  {background:linear-gradient(135deg,#00695c,#00897b);}
+    .section-title.red   {background:linear-gradient(135deg,#b71c1c,#c62828);}
+    .section-title.orange{background:linear-gradient(135deg,#bf360c,#e64a19);}
+    .section-title.yellow{background:linear-gradient(135deg,#e65100,#f57c00);}
+    .section-title.green {background:linear-gradient(135deg,#1b5e20,#2e7d32);}
+    .section-title.indigo{background:linear-gradient(135deg,#283593,#3949ab);}
+    .section-body{background:var(--bg2);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:18px;margin-bottom:24px;box-shadow:0 2px 8px rgba(0,0,0,.3);}
+    .map-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;}
+    .map-card{border:1px solid var(--border);border-radius:8px;padding:14px 16px;background:var(--bg3);transition:box-shadow .2s,transform .2s;}
+    .map-card:hover{box-shadow:0 4px 14px rgba(0,0,0,.3);transform:translateY(-2px);}
+    .map-card-title{font-weight:700;font-size:14px;color:var(--text);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;}
+    .map-card ul{list-style:none;padding:0;}
+    .map-card ul li{font-size:13px;color:var(--text-muted);padding:3px 0;display:flex;align-items:center;gap:6px;}
+    .map-card ul li::before{content:'›';color:var(--border);font-size:16px;}
+    .c-blue  {color:#64b5f6!important;font-weight:600;}
+    .c-green {color:#81c784!important;font-weight:600;}
+    .c-orange{color:#ffa726!important;font-weight:600;}
+    .c-red   {color:#ef5350!important;font-weight:600;}
+    .c-purple{color:#ce93d8!important;font-weight:600;}
+    .c-gold  {color:var(--gold)!important;font-weight:900;}
+    .c-teal  {color:#4dd0e1!important;font-weight:600;}
+    .c-proof {color:#64b5f6!important;font-weight:700;font-style:italic;}
+    .c-blessed{color:#ef5350!important;font-weight:600;}
+    .tip-bar{padding:10px 16px;border-radius:6px;font-size:13px;margin-bottom:16px;display:flex;align-items:flex-start;gap:10px;}
+    .tip-bar.blue  {background:rgba(26,115,232,.12);border-left:4px solid #1565c0;color:#90caf9;}
+    .tip-bar.red   {background:rgba(198,40,40,.12);border-left:4px solid #c62828;color:#ef9a9a;}
+    .tip-bar.green {background:rgba(46,125,50,.12);border-left:4px solid #2e7d32;color:#a5d6a7;}
+    .tip-bar.teal  {background:rgba(0,131,143,.12);border-left:4px solid #00838f;color:#80cbc4;}
+    .tip-bar.yellow{background:rgba(249,168,37,.1);border-left:4px solid #f9a825;color:#ffe082;}
+    .time-badge{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid #4dd0e1;border-radius:20px;padding:4px 14px;font-size:12px;color:#4dd0e1;font-weight:700;margin-bottom:14px;}
+    .loot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px;}
+    .loot-item{font-size:13px;padding:5px 10px;background:var(--bg3);border-radius:4px;color:var(--text-muted);}
+    .styled-table{width:100%;border-collapse:collapse;font-size:13px;}
+    .styled-table thead tr{background:var(--bg3);}
+    .styled-table th{padding:10px 12px;text-align:left;font-weight:700;color:var(--text-muted);border-bottom:2px solid var(--border);}
+    .styled-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text);}
+    .styled-table tr:last-child td{border-bottom:none;}
+    .styled-table tr.highlight{background:rgba(249,168,37,.08);}
+    .styled-table tr:hover{background:rgba(255,255,255,.03);}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    @media(max-width:600px){.two-col{grid-template-columns:1fr;}}
+    .tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-right:4px;}
+    .tag.blue  {background:rgba(26,115,232,.15);color:#64b5f6;}
+    .tag.orange{background:rgba(230,81,0,.15);color:#ffa726;}
+    .tag.red   {background:rgba(198,40,40,.15);color:#ef9a9a;}
+    .drop-panel{border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+    .drop-panel-head{padding:10px 16px;font-weight:700;font-size:13px;letter-spacing:1px;}
+    .drop-panel-head.normal{background:rgba(46,125,50,.15);color:#a5d6a7;border-bottom:1px solid rgba(46,125,50,.3);}
+    .drop-panel-head.boss  {background:rgba(136,14,79,.2);color:#f48fb1;border-bottom:1px solid rgba(136,14,79,.4);}
+    .drop-panel ul{list-style:none;padding:10px 16px;background:var(--bg2);}
+    .drop-panel ul li{font-size:13px;color:var(--text-muted);padding:3px 0;display:flex;align-items:center;gap:6px;}
+    .drop-panel ul li::before{content:'›';color:var(--border);font-size:16px;}
+    .vip-sub{border:1px solid rgba(251,192,45,.3);border-radius:8px;padding:16px;background:rgba(251,192,45,.06);margin-bottom:16px;}
+    .vip-sub h4{color:var(--gold);margin-bottom:10px;font-size:15px;}
+    .vip-sub ul{list-style:none;padding:0;}
+    .vip-sub ul li{font-size:13px;color:var(--text-muted);padding:3px 0;display:flex;align-items:center;gap:6px;}
+    .vip-sub ul li::before{content:'›';color:var(--gold);font-size:16px;}
+    .vip-badge{display:inline-block;background:var(--bg3);border:1px solid rgba(245,127,23,.5);color:#ffa726;padding:2px 10px;border-radius:4px;font-size:12px;font-weight:700;margin-right:6px;margin-bottom:4px;}
+    .pvp-box{background:var(--bg3);border:1px solid var(--border);padding:8px 14px;border-radius:6px;font-size:13px;color:#64b5f6;font-weight:700;margin-top:8px;}
+    @media(max-width:680px){.map-grid{grid-template-columns:1fr;}.two-col{grid-template-columns:1fr;}}
   </style></head>
 <body>
 <nav class="topnav"><a class="topnav-logo" href="index.html">🌀 陀螺天堂</a><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="sponsor.html">贊助系統</a><a class="topnav-link" href="events-list.html">活動介紹</a><a class="topnav-link" href="features.html">遊戲特色</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖特殊掉落</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><a class="topnav-link" href="promote.html">推文與直播</a><div class="topnav-dropdown"><a class="topnav-link">遊戲規章 ▾</a><div class="dropdown-menu"><a href="rules.html">伺服器規章</a><a href="disclaimer.html">免責聲明</a><a href="anti-cheat.html">防作弊聲明</a></div></div><div class="topnav-dropdown"><a class="topnav-link">聯絡我們 ▾</a><div class="dropdown-menu"><a href="https://line.me/ti/g2/efPZsZj8mqabZSOVQgvk0SXqPZMlvBfa-ut1Mw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">LINE 官方社群</a><a href="https://lin.ee/5u5GsiK" target="_blank">LINE 官方</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="https://line.me/ti/g2/efPZsZj8mqabZSOVQgvk0SXqPZMlvBfa-ut1Mw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
@@ -19,109 +85,238 @@
 <div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 預約LINE禮包</div><div class="modal-body"><p>▸ 煉獄耳環<br>▸ 名譽貨幣【刻印】× 100<br>▸ 巧克力蛋糕【刻印】× 100<br>▸ 永久巧克力（永久三水）<br>▸ 永久名譽貨幣（永久三水）<br>▸ 象牙塔治癒藥水 × 10000<br><br><strong>加入 LINE 官方社群後私訊管理員即可領取。</strong></p></div><a class="modal-btn" href="event-line.html">查看禮包詳情</a></div></div>
 <div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><img loading="lazy" src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDt2oQEbC0Vsj-4hnZDUxbXsUQcuj0AAJ4D2sb09WBVJcdFTW15cEjAQADAgADbQADOwQ.png" alt="LINE QR Code" style="width:150px;height:150px;margin:0 auto 12px;display:block;border-radius:8px;"></div><a class="modal-btn" href="https://line.me/ti/g2/efPZsZj8mqabZSOVQgvk0SXqPZMlvBfa-ut1Mw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">加入 LINE 官方社群</a></div></div>
 <div class="hero" style="height:240px"><div class="hero-bg" style="background:linear-gradient(135deg,#081018,#100818);"></div><div class="hero-content"><div class="hero-badge">MAP GUIDE</div><h1 class="hero-title"><span style="font-size:2rem">地圖介紹</span></h1><p class="hero-tagline">各地圖掉落資訊與建議等級</p></div></div>
-<div class="container" style="padding-top:40px;padding-bottom:80px">
-<div class="tab-wrap">
-<div class="tab-nav">
-  <button class="tab-btn">⚔️ 地監探索</button>
-  <button class="tab-btn">🦄 夢幻之島</button>
-  <button class="tab-btn">🌀 時空裂痕</button>
-  <button class="tab-btn">🗼 傲慢之塔</button>
-  <button class="tab-btn">🔥 高階地圖</button>
-  <button class="tab-btn">👑 VIP 專屬</button>
-</div>
+<nav class="nav-bar" id="navBar">
+  <button class="nav-btn active" onclick="jumpTo('general')">⚔️ 一般地監</button>
+  <button class="nav-btn"        onclick="jumpTo('fantasy')">🦄 夢幻之島</button>
+  <button class="nav-btn"        onclick="jumpTo('rift')">🌀 時空裂痕</button>
+  <button class="nav-btn"        onclick="jumpTo('tower')">🗼 傲慢之塔</button>
+  <button class="nav-btn"        onclick="jumpTo('advanced')">🔥 高階地圖</button>
+  <button class="nav-btn"        onclick="jumpTo('vip')">👑 VIP 專區</button>
+  <button class="nav-btn"        onclick="jumpTo('mastery')">❄️ 專精地圖</button>
+  <button class="nav-btn"        onclick="jumpTo('rome')">🏛️ 羅馬地圖</button>
+</nav>
+<div class="container" style="padding-top:8px;padding-bottom:80px">
 
-<!-- ── Tab 1: 地監探索 ── -->
-<div class="tab-panel">
-<div class="map-content" style="max-width:950px;margin:0 auto;line-height:1.6">
-<h3 style="color:#00e5ff;border-left:4px solid #00e5ff;padding-left:10px;margin-top:30px;font-size:.95em;letter-spacing:1px">⚔️ 一般地監 (初/中階)</h3>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px">
-  <div style="border:1px solid var(--border);border-radius:8px;padding:15px;background:var(--bg3)"><strong style="color:var(--text)">🦇 騎士洞穴</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li>一般武器箱</li><li><span style="color:#64b5f6">騎士洞窟證明</span></li><li>魔法書 (聖結界)</li><li>一般娃娃卡寶箱</li></ul></div>
-  <div style="border:1px solid var(--border);border-radius:8px;padding:15px;background:var(--bg3)"><strong style="color:var(--text)">⛓️ 奇岩地監</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li>一般武器箱</li><li><span style="color:#64b5f6">騎士洞窟證明</span></li><li>技術書 (衝擊之暈)</li><li>一般娃娃卡寶箱</li></ul></div>
-  <div style="border:1px solid var(--border);border-radius:8px;padding:15px;background:var(--bg3)"><strong style="color:var(--text)">💧 海音地監</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li>一般飾品箱</li><li><span style="color:#64b5f6">海音地監證明</span></li><li>精靈水晶(三重矢)</li><li>一般娃娃卡寶箱</li></ul></div>
-  <div style="border:1px solid var(--border);border-radius:8px;padding:15px;background:var(--bg3)"><strong style="color:var(--text)">💀 古魯丁地監</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li>一般飾品箱</li><li><span style="color:#64b5f6">古魯丁地監證明</span></li><li>一般變身卡寶箱</li><li><span style="color:#69f0ae">高級製作秘笈</span></li></ul></div>
-  <div style="border:1px solid var(--border);border-radius:8px;padding:15px;background:var(--bg3)"><strong style="color:var(--text)">🏰 象牙塔</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li>一般武器箱</li><li><span style="color:#64b5f6">象牙塔證明</span></li><li>一般變身卡寶箱</li><li><span style="color:#69f0ae">高級製作秘笈</span></li></ul></div>
-  <div style="border:1px solid var(--border);border-radius:8px;padding:15px;background:var(--bg3)"><strong style="color:var(--text)">💎 水晶洞窟</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li>一般防具箱</li><li><span style="color:#64b5f6">水晶洞窟證明</span></li><li><span style="color:#69f0ae">高級製作秘笈</span></li><li>一般變身卡寶箱</li></ul></div>
-  <div style="border:1px solid var(--border);border-radius:8px;padding:15px;background:var(--bg3)"><strong style="color:var(--text)">⚔️ 拉斯塔巴德</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li><span style="color:#69f0ae">高級飾品箱</span></li><li><span style="color:#64b5f6">拉斯塔巴德證明</span></li><li>黑精水晶(雙重破壞)</li><li>一般變身/娃娃寶箱</li></ul></div>
-  <div style="border:1px solid var(--border);border-radius:8px;padding:15px;background:var(--bg3)"><strong style="color:var(--text)">🏴‍☠️ 海賊島地監</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li><span style="color:#69f0ae">高級防具箱</span></li><li><span style="color:#64b5f6">海賊島地監證明</span></li><li>一般變身/娃娃寶箱</li></ul></div>
-  <div style="border:1px solid var(--border);border-radius:8px;padding:15px;background:var(--bg3)"><strong style="color:var(--text)">🐉 龍之谷地監</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li><span style="color:#69f0ae">高級武器箱</span></li><li><span style="color:#64b5f6">龍谷地監證明</span></li><li>一般變身/娃娃寶箱</li></ul></div>
-  <div style="border:1px solid var(--border);border-radius:8px;padding:15px;background:var(--bg3)"><strong style="color:var(--text)">🌊 地底湖</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li><span style="color:#64b5f6">地底湖證明</span></li><li><span style="color:#69f0ae">高級變身/娃娃寶箱</span></li><li><span style="color:#ff5252">六芒星升階石</span></li><li>Lv.1 六芒星徽章</li></ul></div>
-  <div style="border:1px solid var(--border);border-radius:8px;padding:15px;background:var(--bg3)"><strong style="color:var(--text)">🍃 精靈墓穴 (建議等級 LV.54)</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li><span style="color:#64b5f6">精靈墓穴證明</span></li><li><span style="color:#69f0ae">高級變身/娃娃寶箱</span></li><li><span style="color:#ff5252">雕像升級石</span></li><li>戰馬雕像系列</li></ul></div>
-  <div style="border:1px solid var(--border);border-radius:8px;padding:15px;background:var(--bg3)"><strong style="color:var(--text)">🏝️ 遺忘之島</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li><span style="color:#64b5f6">遺忘之島證明</span></li><li>金幣</li><li>一般變身卡寶箱</li><li>一般娃娃卡寶箱</li><li><span style="color:#69f0ae">高級武器箱</span></li><li><span style="color:#69f0ae">高級防具箱</span></li><li><span style="color:#69f0ae">高級製作秘笈</span></li></ul></div>
-</div>
-</div><!-- end map-content -->
-</div><!-- end tab-panel 1 -->
-
-<!-- ── Tab 2: 夢幻之島 ── -->
-<div class="tab-panel">
-<div class="map-content" style="max-width:950px;margin:0 auto;line-height:1.6">
-<h3 style="color:#ce93d8;border-left:4px solid #ce93d8;padding-left:10px;margin-top:0;font-size:.95em;letter-spacing:1px">🦄 夢幻之島 (特殊掉落)(建議等級 LV.54)</h3>
-<div style="background:var(--bg2);border:1px solid rgba(206,147,216,.3);border-radius:8px;padding:15px"><ul style="margin:0;padding-left:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;color:#ce93d8"><li><span style="color:#64b5f6">夢幻之島證明</span></li><li><strong>純白的萬能藥</strong></li><li>各式屬性萬能藥 (力/敏/體/智/精/魅)</li><li><span style="color:#ff5252">受祝福</span>的 武/防 卷軸</li><li>受詛咒的 武/防 卷軸</li></ul></div>
-</div><!-- end map-content -->
-</div><!-- end tab-panel 2 -->
-
-<!-- ── Tab 3: 時空裂痕 ── -->
-<div class="tab-panel">
-<div class="map-content" style="max-width:950px;margin:0 auto;line-height:1.6">
-<h3 style="color:#4dd0e1;border-left:4px solid #4dd0e1;padding-left:10px;margin-top:0;font-size:.95em;letter-spacing:1px">🌀 時空裂痕 (周一、周三限時3小時，時間倒數結束將自動傳出)</h3>
-<div style="background:var(--bg2);border:1px solid rgba(77,208,225,.3);border-radius:8px;padding:15px">
-  <div style="background:var(--bg3);border:1px solid #4dd0e1;padding:8px 12px;border-radius:4px;margin-bottom:15px;color:#4dd0e1;font-size:0.95em"><strong>⏱️ 開放時間：</strong>11:00–14:00；20:00–23:00</div>
-  <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px;border-bottom:1px dashed rgba(77,208,225,.3);padding-bottom:10px"><div style="flex:1"><strong style="color:#4dd0e1">💎 重點掉落：</strong><span style="color:#4dd0e1;font-weight:bold">時空裂痕碎片</span></div><div style="background:var(--bg3);padding:5px 12px;border-radius:20px;border:1px solid #4dd0e1;font-size:0.9em;color:#4dd0e1">🔄 兌換公式：<strong>100碎片</strong> ➔ <strong>時空裂痕寶箱</strong></div></div>
-  <strong style="color:#4dd0e1;display:block;margin-bottom:8px">📦 時空裂痕寶箱內容物 (隨機獲得其一)：</strong>
-  <ul style="margin:0;padding-left:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;color:var(--text-muted);font-size:0.93em"><li>金幣 (10000~30000)</li><li>對盔甲施法的卷軸 (1~3)</li><li>對武器施法的卷軸 (1~3)</li><li><span style="color:#ff5252;font-weight:bold">受祝福</span>的對盔甲施法的卷軸 (1~2)</li><li><span style="color:#ff5252;font-weight:bold">受祝福</span>的對武器施法的卷軸 (1~2)</li><li><span style="color:#ff5252;font-weight:bold">受詛咒</span>的對盔甲施法的卷軸 (1~2)</li><li><span style="color:#ff5252;font-weight:bold">受詛咒</span>的對武器施法的卷軸 (1~2)</li><li><span style="color:#64b5f6">碎裂神石</span> (1)</li><li><span style="color:#90caf9">高技碎片箱(自選)</span> (1)</li><li>一般變身卡寶箱 (1~3)</li><li>高級變身卡寶箱 (1~3)</li><li><span style="color:#90caf9">稀有變身卡寶箱</span> (1~2)</li><li>一般娃娃卡寶箱 (1~3)</li><li>高級娃娃卡寶箱 (1~3)</li><li><span style="color:#90caf9">稀有娃娃卡寶箱</span> (1~2)</li></ul>
-</div>
-</div><!-- end map-content -->
-</div><!-- end tab-panel 3 -->
-
-<!-- ── Tab 4: 傲慢之塔 ── -->
-<div class="tab-panel">
-<div class="map-content" style="max-width:950px;margin:0 auto;line-height:1.6">
-<h3 style="color:#ff6b6b;border-left:4px solid #ff6b6b;padding-left:10px;margin-top:0;font-size:.95em;letter-spacing:1px">🗼 傲慢之塔 1F ~ 10F (建議等級 LV.54)</h3>
-<div style="background:rgba(255,107,107,.08);border:1px solid rgba(255,107,107,.3);padding:10px;border-radius:4px;margin-bottom:15px;color:#ff9999;font-size:0.93em"><strong>💡 重點提示：</strong>全樓層皆會掉落 <span style="background:var(--bg3);padding:2px 6px;border-radius:4px;border:1px solid #ff6b6b">聖物召喚擴充卷</span> (樓層越高機率越高)。</div>
-<div style="border:1px solid var(--border);border-radius:8px;overflow:hidden"><table style="width:100%;border-collapse:collapse;font-size:13px;color:var(--text)"><thead><tr style="background:var(--bg3);color:var(--text-muted)"><th style="padding:10px;text-align:left;width:15%">樓層</th><th style="padding:10px;text-align:left">共同掉落</th><th style="padding:10px;text-align:left">專屬聖物 / 重點</th></tr></thead><tbody><tr><td style="padding:10px;border-bottom:1px solid var(--border);font-weight:bold">1F ~ 3F</td><td style="padding:10px;border-bottom:1px solid var(--border)">證明、金幣、四屬性武卷、稀有秘笈、聖物藥劑</td><td style="padding:10px;border-bottom:1px solid var(--border);color:#ff6b6b">阿吐巴圖騰、那魯加圖勝</td></tr><tr><td style="padding:10px;border-bottom:1px solid var(--border);font-weight:bold">4F ~ 6F</td><td style="padding:10px;border-bottom:1px solid var(--border)">證明、金幣、四屬性武卷、稀有秘笈、聖物藥劑</td><td style="padding:10px;border-bottom:1px solid var(--border);color:#ff6b6b">甘地的圖騰</td></tr><tr><td style="padding:10px;border-bottom:1px solid var(--border);font-weight:bold">7F ~ 9F</td><td style="padding:10px;border-bottom:1px solid var(--border)">證明、金幣、四屬性武卷、稀有秘笈、聖物藥劑</td><td style="padding:10px;border-bottom:1px solid var(--border);color:#ff6b6b">阿吐巴、甘地、那魯加 (三種皆掉)</td></tr><tr style="background:var(--bg4)"><td style="padding:10px;font-weight:bold;color:var(--gold)">10F (頂樓)</td><td style="padding:10px"><span style="color:#69f0ae">高級武/防/飾箱</span>、高級變身/娃娃箱<br>證明、金幣、四屬性武卷、稀有秘笈</td><td style="padding:10px;font-weight:bold;color:#ffb74d">三種聖物圖騰皆掉落<br>聖物成長藥劑</td></tr></tbody></table></div>
-</div><!-- end map-content -->
-</div><!-- end tab-panel 4 -->
-
-<!-- ── Tab 5: 高階地圖 ── -->
-<div class="tab-panel">
-<div class="map-content" style="max-width:950px;margin:0 auto;line-height:1.6">
-<h3 style="color:#ffb74d;border-left:4px solid #ffb74d;padding-left:10px;margin-top:0;font-size:.95em;letter-spacing:1px">🔥 高階地圖 (古代島 / 高崙)(建議等級 LV.58)</h3>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px">
-  <div style="background:var(--bg2);border:1px solid rgba(255,183,77,.3);border-radius:8px;padding:15px"><strong style="color:#ffb74d">🏝️ 古代遺忘之島</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li><span style="color:#64b5f6">古代遺忘之島證明</span></li><li>金幣</li><li><span style="color:#90caf9">稀有 變身/娃娃 寶箱</span></li><li><span style="color:#ff5252">祝福 武/防/飾 卷軸</span></li></ul></div>
-  <div style="background:var(--bg2);border:1px solid rgba(255,183,77,.3);border-radius:8px;padding:15px"><strong style="color:#ffb74d">🗿 高崙研究所</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.93em"><li><span style="color:#64b5f6">古代高崙研究所證明</span></li><li>金幣</li><li><span style="color:#90caf9">稀有 變身/娃娃 寶箱</span></li><li><span style="color:#ff5252">祝福 武/防/飾 卷軸</span></li></ul></div>
-</div>
-</div><!-- end map-content -->
-</div><!-- end tab-panel 5 -->
-
-<!-- ── Tab 6: VIP 專屬 ── -->
-<div class="tab-panel">
-<div class="map-content" style="max-width:950px;margin:0 auto;line-height:1.6">
-<h3 style="color:var(--pink);border-left:4px solid var(--pink);padding-left:10px;margin-top:0;font-size:.95em;letter-spacing:1px">👑 VIP 專屬地圖</h3>
-<div style="border:1px solid #fbc02d;border-radius:8px;padding:20px;background:var(--bg4)">
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px">
-    <div style="border-right:1px dashed rgba(255,45,120,.3);padding-right:15px">
-      <h4 style="margin-top:0;color:var(--gold)">🌲 隱藏之谷 (經驗)(建議等級 LV.40)</h4>
-      <ul style="padding-left:20px;color:var(--text-muted)"><li>大量經驗</li><li>金幣</li><li>200% 經驗藥水(刻印)</li><li><span style="color:#ffb74d;font-weight:bold">(2階) 150% 經驗藥水</span></li></ul>
-    </div>
-    <div>
-      <h4 style="margin-top:0;color:var(--gold)">🏰 支配之塔 1F (打寶)(建議等級 LV.58)</h4>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:15px"><span style="background:var(--bg3);border:1px solid var(--border);padding:2px 8px;border-radius:4px;color:var(--text-muted)">一般/高級/稀有 裝備箱</span><span style="background:var(--bg3);border:1px solid var(--border);padding:2px 8px;border-radius:4px;color:var(--text-muted)">一般/高級/稀有 卡片箱</span><span style="background:rgba(245,127,23,.15);border:1px solid #f57f17;color:#ffb74d;padding:2px 8px;border-radius:4px;font-weight:bold">職業之力箱 (自選)</span></div>
-      <h4 style="margin-top:0;color:var(--gold)">🏰 支配之塔 2F (建議等級 LV.58)</h4>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:15px"><span style="background:var(--bg3);border:1px solid var(--border);padding:2px 8px;border-radius:4px;color:var(--text-muted)">一般/高級/稀有 裝備箱</span><span style="background:var(--bg3);border:1px solid var(--border);padding:2px 8px;border-radius:4px;color:var(--text-muted)">一般/高級/稀有 卡片箱</span><span style="background:rgba(245,127,23,.15);border:1px solid #f57f17;color:#ffb74d;padding:2px 8px;border-radius:4px;font-weight:bold">職業之力箱 (自選)</span></div>
+  <div class="section-block" id="general">
+    <div class="section-title blue">⚔️ 一般地監（初 / 中階）</div>
+    <div class="section-body">
+      <div class="map-grid">
+        <div class="map-card"><div class="map-card-title">🦇 騎士洞穴</div><ul><li>一般武器箱</li><li><span class="c-proof">騎士洞窟證明</span></li><li>魔法書（聖結界）</li><li>一般娃娃卡寶箱</li></ul></div>
+        <div class="map-card"><div class="map-card-title">⛓️ 奇岩地監</div><ul><li>一般武器箱</li><li><span class="c-proof">奇岩地監證明</span></li><li>技術書（衝擊之暈）</li><li>一般娃娃卡寶箱</li></ul></div>
+        <div class="map-card"><div class="map-card-title">💧 海音地監</div><ul><li>一般飾品箱</li><li><span class="c-proof">海音地監證明</span></li><li>精靈水晶（三重矢）</li><li>一般娃娃卡寶箱</li></ul></div>
+        <div class="map-card"><div class="map-card-title">💀 古魯丁地監</div><ul><li>一般飾品箱</li><li><span class="c-proof">古魯丁地監證明</span></li><li>一般變身卡寶箱</li><li><span class="c-green">高級製作秘笈</span></li></ul></div>
+        <div class="map-card"><div class="map-card-title">🏰 象牙塔</div><ul><li>一般武器箱</li><li><span class="c-proof">象牙塔證明</span></li><li>一般變身卡寶箱</li><li><span class="c-green">高級製作秘笈</span></li></ul></div>
+        <div class="map-card"><div class="map-card-title">💎 水晶洞窟</div><ul><li>一般防具箱</li><li><span class="c-proof">水晶洞窟證明</span></li><li><span class="c-green">高級製作秘笈</span></li><li>一般變身卡寶箱</li></ul></div>
+        <div class="map-card"><div class="map-card-title">⚔️ 拉斯塔巴德</div><ul><li><span class="c-green">高級飾品箱</span></li><li><span class="c-proof">拉斯塔巴德證明</span></li><li>黑精水晶（雙重破壞）</li><li>一般變身/娃娃寶箱</li></ul></div>
+        <div class="map-card"><div class="map-card-title">🏴‍☠️ 海賊島地監</div><ul><li><span class="c-green">高級防具箱</span></li><li><span class="c-proof">海賊島地監證明</span></li><li>一般變身/娃娃寶箱</li></ul></div>
+        <div class="map-card"><div class="map-card-title">🐉 龍之谷地監</div><ul><li><span class="c-green">高級武器箱</span></li><li><span class="c-proof">龍谷地監證明</span></li><li>一般變身/娃娃寶箱</li></ul></div>
+        <div class="map-card"><div class="map-card-title">🌊 地底湖</div><ul><li><span class="c-proof">地底湖證明</span></li><li><span class="c-green">高級變身/娃娃寶箱</span></li><li><span class="c-red">六芒星升階石</span></li><li>Lv.1 六芒星徽章</li></ul></div>
+        <div class="map-card"><div class="map-card-title">🍃 精靈墓穴 <span class="tag blue">LV.54</span></div><ul><li><span class="c-proof">精靈墓穴證明</span></li><li><span class="c-green">高級變身/娃娃寶箱</span></li><li><span class="c-red">雕像升級石</span></li><li>戰馬雕像系列</li></ul></div>
+        <div class="map-card"><div class="map-card-title">🏝️ 遺忘之島</div><ul><li><span class="c-proof">遺忘之島證明</span></li><li>金幣</li><li>一般變身/娃娃卡寶箱</li><li><span class="c-green">高級武器箱</span></li><li><span class="c-green">高級防具箱</span></li><li><span class="c-green">高級製作秘笈</span></li></ul></div>
+      </div>
     </div>
   </div>
-  <div style="margin-top:20px;border-top:1px dashed rgba(255,45,120,.3);padding-top:15px">
-    <h4 style="margin-top:0;color:var(--gold)">⚔️ 烽火戰場 (建議等級 LV.62)</h4>
-    <p style="margin:0 0 15px 0;color:#90caf9;font-weight:bold">💡 PVP幣可與 雷兒 戰場商人 兌換物品</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin-bottom:15px">
-      <div><strong style="color:var(--text)">🎁 掉落內容</strong><ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:0.9em"><li>金幣</li><li>空的魔法卷軸(等級4)</li><li>空的魔法卷軸(等級5)</li><li>兔子的肝</li><li>PVP幣</li><li>受祝福的對武器施法的卷軸</li><li>受詛咒的對武器施法的卷軸</li><li>受祝福的對盔甲施法的卷軸</li><li>受詛咒的對盔甲施法的卷軸</li><li>對武器施法的卷軸</li><li>對盔甲施法的卷軸</li><li>高級製作秘笈</li><li>稀有製作秘笈</li><li>英雄製作秘笈</li><li>少了刀刃的武器</li></ul></div>
-      <div><strong style="color:var(--text)">📦 戰場寶箱介紹</strong><ul style="margin:5px 0 15px 0;padding-left:20px;color:var(--text-muted);font-size:0.9em"><li>戰場徽章</li><li>PVP徽章(6H)寶箱</li><li>空的魔法卷軸(等級5)</li><li>空的魔法卷軸(等級4)</li><li>兔子的肝(刻印)</li><li>金幣</li><li>戰場徽章強化石</li></ul><strong style="color:var(--text)">🎖️ PVP 勳章 (6H) 介紹</strong><div style="background:var(--bg3);border:1px solid var(--border);padding:8px;border-radius:4px;margin-top:5px;font-size:0.9em;color:#90caf9">能力：力敏智+1、額外傷害+4、魔攻+2、減傷+2、魔防+5</div></div>
+
+  <div class="section-block" id="fantasy">
+    <div class="section-title purple">🦄 夢幻之島（特殊掉落）<span style="font-size:12px;font-weight:400;margin-left:8px;opacity:0.75;">建議等級 LV.54</span></div>
+    <div class="section-body">
+      <div class="loot-grid">
+        <div class="loot-item"><span class="c-proof">夢幻之島證明</span></div>
+        <div class="loot-item"><strong style="color:var(--text)">純白的萬能藥</strong></div>
+        <div class="loot-item">各式屬性萬能藥（力/敏/體/智/精/魅）</div>
+        <div class="loot-item"><span class="c-blessed">受祝福</span>的 武/防 卷軸</div>
+        <div class="loot-item">受詛咒的 武/防 卷軸</div>
+      </div>
     </div>
   </div>
-</div><!-- end VIP inner div -->
-</div><!-- end map-content -->
-</div><!-- end tab-panel 6 -->
-</div><!-- end tab-wrap -->
-</div><!-- end container -->
+
+  <div class="section-block" id="rift">
+    <div class="section-title teal">🌀 時空裂痕（周一、周三 限時 3 小時）</div>
+    <div class="section-body">
+      <div class="time-badge">⏱️ 開放時間：11:00–14:00 ／ 20:00–23:00</div>
+      <div class="tip-bar teal"><span>💎</span><span>重點掉落：<strong>時空裂痕碎片</strong>　｜　兌換公式：<strong>100 碎片 ➔ 時空裂痕寶箱</strong></span></div>
+      <p style="font-weight:700;color:#4dd0e1;margin-bottom:10px;font-size:13px;">📦 時空裂痕寶箱內容物（隨機獲得其一）：</p>
+      <div class="loot-grid">
+        <div class="loot-item">金幣</div><div class="loot-item">對盔甲施法的卷軸</div><div class="loot-item">對武器施法的卷軸</div>
+        <div class="loot-item"><span class="c-blessed">受祝福</span>的對盔甲施法的卷軸</div><div class="loot-item"><span class="c-blessed">受祝福</span>的對武器施法的卷軸</div>
+        <div class="loot-item">受詛咒的對盔甲施法的卷軸</div><div class="loot-item">受詛咒的對武器施法的卷軸</div>
+        <div class="loot-item"><span class="c-blue">碎裂神石</span></div><div class="loot-item"><span class="c-blue">高技碎片箱（自選）</span></div>
+        <div class="loot-item">一般變身卡寶箱</div><div class="loot-item">高級變身卡寶箱</div><div class="loot-item"><span class="c-blue">稀有變身卡寶箱</span></div>
+        <div class="loot-item">一般娃娃卡寶箱</div><div class="loot-item">高級娃娃卡寶箱</div><div class="loot-item"><span class="c-blue">稀有娃娃卡寶箱</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block" id="tower">
+    <div class="section-title red">🗼 傲慢之塔（1F ~ 10F）<span style="font-size:12px;font-weight:400;margin-left:8px;opacity:0.75;">建議等級 LV.54</span></div>
+    <div class="section-body">
+      <div class="tip-bar red"><span>💡</span><span>全樓層皆會掉落 <strong>聖物召喚擴充卷</strong>，樓層越高機率越高。</span></div>
+      <table class="styled-table">
+        <thead><tr><th style="width:16%">樓層</th><th>共同掉落</th><th>專屬聖物 / 重點</th></tr></thead>
+        <tbody>
+          <tr><td><strong style="color:var(--text)">1F ~ 3F</strong></td><td><span class="c-proof">各樓層證明</span>、金幣、四屬性武卷、稀有秘笈、聖物藥劑</td><td style="color:#ef5350;">阿吐巴圖騰、那魯加圖勝</td></tr>
+          <tr><td><strong style="color:var(--text)">4F ~ 6F</strong></td><td><span class="c-proof">各樓層證明</span>、金幣、四屬性武卷、稀有秘笈、聖物藥劑</td><td style="color:#ef5350;">甘地的圖騰</td></tr>
+          <tr><td><strong style="color:var(--text)">7F ~ 9F</strong></td><td><span class="c-proof">各樓層證明</span>、金幣、四屬性武卷、稀有秘笈、聖物藥劑</td><td style="color:#ef5350;">阿吐巴、甘地、那魯加（三種皆掉）</td></tr>
+          <tr class="highlight"><td><strong style="color:#ffa726;">10F（頂樓）</strong></td><td><span class="c-green">高級武/防/飾箱</span>、高級變身/娃娃箱、<span class="c-proof">10F證明</span>、金幣、四屬性武卷、稀有秘笈</td><td style="color:#ffa726;font-weight:700;">三種聖物圖騰皆掉落<br>聖物成長藥劑</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-block" id="advanced">
+    <div class="section-title orange">🔥 高階地圖（古代島 / 高崙）<span style="font-size:12px;font-weight:400;margin-left:8px;opacity:0.75;">建議等級 LV.58</span></div>
+    <div class="section-body">
+      <div class="two-col">
+        <div class="map-card"><div class="map-card-title">🏝️ 古代遺忘之島</div><ul><li><span class="c-proof">古代遺忘之島證明</span></li><li>金幣</li><li><span class="c-blue">稀有 變身/娃娃 寶箱</span></li><li><span class="c-blessed">祝福</span> 武/防/飾 卷軸</li></ul></div>
+        <div class="map-card"><div class="map-card-title">🗿 高崙研究所</div><ul><li><span class="c-proof">古代高崙研究所證明</span></li><li>金幣</li><li><span class="c-blue">稀有 變身/娃娃 寶箱</span></li><li><span class="c-blessed">祝福</span> 武/防/飾 卷軸</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block" id="vip">
+    <div class="section-title yellow">👑 VIP 專屬地圖</div>
+    <div class="section-body">
+      <div class="vip-sub">
+        <h4>🌲 隱藏之谷 <span class="tag blue">LV.40</span></h4>
+        <ul><li><span class="c-proof">隱藏之谷證明</span></li><li>大量經驗</li><li>金幣</li><li>200% 經驗藥水（刻印）</li><li><span class="c-red">(2階) 150% 經驗藥水</span></li></ul>
+      </div>
+      <div class="vip-sub">
+        <h4>🏰 支配之塔 <span class="tag blue">LV.58</span></h4>
+        <div class="two-col" style="gap:12px;">
+          <div>
+            <p style="font-weight:700;color:var(--gold);margin-bottom:8px;font-size:13px;">1F</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+              <span class="vip-badge">一般/高級/稀有 裝備箱</span><span class="vip-badge">一般/高級/稀有 卡片箱</span>
+              <span class="vip-badge" style="border-color:rgba(198,40,40,.5);color:#ef9a9a;">職業之力箱（自選）</span>
+              <span class="vip-badge" style="border-color:rgba(100,181,246,.5);color:#64b5f6;font-style:italic;">支配1F證明</span>
+            </div>
+          </div>
+          <div>
+            <p style="font-weight:700;color:var(--gold);margin-bottom:8px;font-size:13px;">2F</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+              <span class="vip-badge">一般/高級/稀有 裝備箱</span><span class="vip-badge">一般/高級/稀有 卡片箱</span>
+              <span class="vip-badge" style="border-color:rgba(198,40,40,.5);color:#ef9a9a;">職業之力箱（自選）</span>
+              <span class="vip-badge" style="border-color:rgba(100,181,246,.5);color:#64b5f6;font-style:italic;">支配2F證明</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vip-sub">
+        <h4>⚔️ 烽火戰場 <span class="tag red">LV.62</span></h4>
+        <div class="tip-bar blue" style="margin-bottom:14px;"><span>💡</span><span>PVP幣可與 <strong>雷兒 戰場商人</strong> 兌換物品</span></div>
+        <div class="two-col">
+          <div>
+            <p style="font-weight:700;color:var(--text);margin-bottom:8px;font-size:13px;">🎁 掉落內容</p>
+            <ul style="list-style:none;padding:0;">
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;"><span class="c-proof">烽火戰場證明</span></li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">金幣</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">空的魔法卷軸（等級4/5）</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">兔子的肝</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">PVP幣</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;"><span class="c-blessed">受祝福</span>/受詛咒 的對武器施法的卷軸</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;"><span class="c-blessed">受祝福</span>/受詛咒 的對盔甲施法的卷軸</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">對武器/盔甲施法的卷軸</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">高級製作秘笈</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;"><span class="c-blue">稀有製作秘笈</span></li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;"><span class="c-orange">英雄製作秘笈</span></li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">少了刀刃的武器</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-weight:700;color:var(--text);margin-bottom:8px;font-size:13px;">📦 戰場寶箱內容</p>
+            <ul style="list-style:none;padding:0;margin-bottom:14px;">
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">戰場徽章</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">PVP徽章(6H)寶箱</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">空的魔法卷軸（等級4/5）</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">兔子的肝（刻印）</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">金幣</li>
+              <li style="font-size:13px;color:var(--text-muted);padding:2px 0;">戰場徽章強化石</li>
+            </ul>
+            <p style="font-weight:700;color:var(--text);margin-bottom:6px;font-size:13px;">🎖️ PVP 勳章（6H）能力</p>
+            <div class="pvp-box">力敏智+1、額外傷害+4、魔攻+2、減傷+2、魔防+5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block" id="mastery">
+    <div class="section-title green">❄️ 專精地圖 — 冰天雪地（每天限時 2 小時）</div>
+    <div class="section-body">
+      <div class="tip-bar green"><span>💡</span><span>專精碎片主要來源，每天限時開放 2 小時。碎片可用於製作四種<strong>專精之證</strong>。</span></div>
+      <div class="two-col">
+        <div class="drop-panel">
+          <div class="drop-panel-head normal">👾 一般怪物掉落</div>
+          <ul>
+            <li><span class="c-red">專精碎片</span></li><li>金幣</li>
+            <li><span class="c-green">高級製作秘笈</span></li><li><span class="c-blue">稀有製作秘笈</span></li>
+            <li><span class="c-orange">英雄製作秘笈</span></li><li><span class="c-purple">傳說製作秘笈</span></li>
+            <li>對盔甲施法的卷軸 / 對武器施法的卷軸</li>
+            <li><span class="c-blessed">受祝福</span>的對盔甲/武器施法的卷軸</li>
+            <li>受詛咒的對盔甲/武器施法的卷軸</li>
+          </ul>
+        </div>
+        <div class="drop-panel">
+          <div class="drop-panel-head boss">💀 專精 BOSS — 貝利艾爾　<span style="font-size:11px;font-weight:400;">⏱️ 重生時間：12 小時</span></div>
+          <ul>
+            <li><span class="c-red">專精碎片</span></li><li>金幣</li>
+            <li><span class="c-orange">英雄製作秘笈</span></li><li><span class="c-purple">傳說製作秘笈</span></li>
+            <li><span class="c-gold">神話製作秘笈</span></li><li>防爆卷箱子</li><li>召喚控制戒指</li>
+            <li>對盔甲/武器施法的卷軸</li><li>技術書（反擊屏障）</li><li>少了刀刃的武器</li>
+            <li>魔法書（王者之劍）</li><li>藍鑽</li>
+            <li><span class="c-blessed">受祝福</span>的對盔甲施法的卷軸</li>
+            <li><span class="c-blessed">受祝福</span>的對武器施法的卷軸</li>
+            <li>祝福的瞬間移動卷軸</li><li>受詛咒的對盔甲/武器施法的卷軸</li><li>祝福的防爆卷軸</li>
+            <li>一般 / <span class="c-green">高級</span> / <span class="c-blue">稀有</span> / <span class="c-orange">英雄</span> 武器箱</li>
+            <li>一般 / <span class="c-green">高級</span> / <span class="c-blue">稀有</span> / <span class="c-orange">英雄</span> 防具箱</li>
+            <li>一般 / <span class="c-green">高級</span> / <span class="c-blue">稀有</span> / <span class="c-orange">英雄</span> 飾品箱</li>
+            <li><span class="c-blue">高技碎片箱（自選）</span></li><li><span class="c-orange">職業之力箱（自選）</span></li>
+            <li>魔法書（力場結界）</li><li>技術書（狂襲）</li>
+            <li>黑暗精靈水晶（復仇）</li><li>精靈水晶（精靈之暈）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block" id="rome">
+    <div class="section-title indigo">🏛️ 羅馬地圖（專屬內掛）</div>
+    <div class="section-body">
+      <div class="two-col" style="margin-bottom:20px;">
+        <div class="drop-panel">
+          <div class="drop-panel-head normal">👾 一般怪物掉落</div>
+          <ul>
+            <li>金幣</li><li>PVP幣</li><li>對武器施法的卷軸</li><li>對盔甲施法的卷軸</li>
+            <li><span class="c-green">高級製作秘笈</span></li><li><span class="c-blue">稀有製作秘笈</span></li>
+            <li>少了刀刃的武器</li><li>一般防具箱</li><li>一般飾品箱</li><li>一般武器箱</li>
+            <li>一般變身卡寶箱</li><li>一般娃娃卡寶箱</li>
+            <li><span class="c-green">高級變身卡寶箱</span></li><li><span class="c-green">高級娃娃卡寶箱</span></li>
+          </ul>
+        </div>
+        <div class="drop-panel">
+          <div class="drop-panel-head boss">💀 地圖 BOSS — 毒瘤演員　<span style="font-size:11px;font-weight:400;">⏱️ 重生時間：10 小時</span></div>
+          <ul>
+            <li>自我加速藥水</li><li>勇敢藥水 / 藍色藥水 / 慎重藥水 / 失明藥水</li>
+            <li>鑽石 / 品質鑽石 / 高品質鑽石</li><li>對盔甲/武器施法的卷軸</li>
+            <li>復活卷軸</li><li>空的魔法卷軸（等級4/5）</li>
+            <li>技術書（衝擊之暈 / 增幅防禦 / 尖刺盔甲 / 狂襲）</li>
+            <li>魔法書（吸血鬼之吻 / 迷魅術 / 體魄強健術 / 烈炎術 / 龍捲風 / 疾病術 / 返生術 / 火風暴 / 藥水霜化術 / 王者之劍 / 力場結界）</li>
+            <li>精靈水晶（鏡反射 / 地面障礙 / 烈炎武器 / 精靈之暈）／黑暗精靈水晶（復仇）</li>
+            <li>金幣</li><li>少了刀刃的武器</li><li>藍鑽</li>
+            <li><span class="c-blessed">受祝福</span>的對盔甲/武器施法的卷軸</li>
+            <li>受詛咒的對盔甲/武器施法的卷軸</li><li>防爆卷箱子</li>
+            <li><span class="c-green">高級製作秘笈</span></li><li><span class="c-blue">稀有製作秘笈</span></li><li><span class="c-orange">英雄製作秘笈</span></li>
+            <li>一般 / <span class="c-green">高級</span> / <span class="c-blue">稀有</span> / <span class="c-orange">英雄</span> 武器箱</li>
+            <li>一般 / <span class="c-green">高級</span> / <span class="c-blue">稀有</span> / <span class="c-orange">英雄</span> 防具箱</li>
+            <li>一般 / <span class="c-green">高級</span> / <span class="c-blue">稀有</span> / <span class="c-orange">英雄</span> 飾品箱</li>
+            <li><span class="c-green">高級變身卡寶箱</span></li><li><span class="c-green">高級娃娃卡寶箱</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 <footer>
   <div class="footer-inner">
     <div>
@@ -156,6 +351,27 @@
     © 2026 陀螺天堂 · 版權所有<br>
   </div>
 </footer>
+<script>
+function jumpTo(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const tnav = document.querySelector('.topnav');
+  const nb = document.getElementById('navBar');
+  const offset = (tnav ? tnav.offsetHeight : 58) + (nb ? nb.offsetHeight : 44) + 8;
+  const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+const _mapSec = ['general','fantasy','rift','tower','advanced','vip','mastery','rome'];
+const _mapBtns = document.querySelectorAll('.nav-btn');
+window.addEventListener('scroll', () => {
+  const tnav2 = document.querySelector('.topnav');
+  const nb2 = document.getElementById('navBar');
+  const navH = (tnav2 ? tnav2.offsetHeight : 58) + (nb2 ? nb2.offsetHeight : 44) + 8;
+  let cur = _mapSec[0];
+  _mapSec.forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= navH + 60) cur = id; });
+  _mapBtns.forEach((btn, i) => btn.classList.toggle('active', _mapSec[i] === cur));
+});
+</script>
 <script src="main.js"></script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body></html>
