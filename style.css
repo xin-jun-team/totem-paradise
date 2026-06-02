@@ -1035,13 +1035,13 @@ footer {
 .accordion-bd.open { display:block; }
 
 /* ══ Left TOC Sidebar ══ */
-.page-layout{display:flex;gap:28px;align-items:flex-start}
-.left-toc{position:sticky;top:80px;width:180px;flex-shrink:0;background:var(--bg2);border-radius:10px;border:1px solid var(--border);padding:0;overflow:hidden;max-height:calc(100vh - 100px);overflow-y:auto}
+.page-layout{display:block}
+.left-toc{position:fixed;left:10px;top:100px;width:160px;z-index:50;background:var(--bg2);border-radius:10px;border:1px solid var(--border);padding:0;overflow:hidden;max-height:calc(100vh - 120px);overflow-y:auto}
 .left-toc::-webkit-scrollbar{width:3px}.left-toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 .left-toc-heading{font-size:.72em;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);padding:12px 14px 10px;border-bottom:1px solid var(--border);background:var(--bg3)}
 .left-toc-btn{display:block;padding:10px 14px;font-size:.82em;font-weight:700;letter-spacing:.3px;color:var(--text-muted);text-decoration:none;border-left:3px solid transparent;border-top:none;border-right:none;border-bottom:none;background:none;width:100%;text-align:left;cursor:pointer;transition:color .2s,border-left-color .2s,background .2s;font-family:inherit;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .left-toc-btn+.left-toc-btn{border-top:1px solid rgba(255,255,255,.04)}
 .left-toc-btn:hover{color:var(--text);border-left-color:rgba(201,169,110,.4);background:rgba(255,255,255,.02)}
 .left-toc-btn.active{color:var(--accent);border-left-color:var(--accent);background:rgba(201,169,110,.06)}
-.page-main{flex:1;min-width:0}
-@media(max-width:900px){.page-layout{flex-direction:column}.left-toc{position:static;width:100%;display:flex;flex-wrap:wrap;gap:2px;padding:6px;overflow:visible;border-radius:8px;max-height:none}.left-toc-heading{display:none}.left-toc-btn{flex:0 0 auto;padding:7px 12px;border-left:none;border-top:none!important;border-bottom:2px solid transparent;font-size:.8em;width:auto;white-space:nowrap;overflow:visible}.left-toc-btn:hover,.left-toc-btn.active{border-left:none;border-bottom-color:var(--accent);background:rgba(201,169,110,.06)}}
+.page-main{display:block}
+@media(max-width:900px){.left-toc{display:none}}
